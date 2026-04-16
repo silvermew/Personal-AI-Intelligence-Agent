@@ -1,7 +1,7 @@
 # 🤖 Personal Robotics Intelligence Agent
 > An autonomous AI agent that distills high-density technical research into actionable "Robotics Impact" briefings.
 
-**[🚀 View the Live Sample Briefing]([https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/sample.html](https://silvermew.github.io/Personal-AI-Intelligence-Agent/sample.html))**
+**[🚀 View the Live Sample Briefing](https://silvermew.github.io/Personal-AI-Intelligence-Agent/sample.html)**
 
 ---
 
