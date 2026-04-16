@@ -1,0 +1,31 @@
+name: Daily Robotics Summary
+
+on:
+  schedule:
+    # This runs at 08:00 UTC every day. 
+    # You can change this to your preferred time.
+    - cron: '0 8 * * *'
+  workflow_dispatch: # This allows you to run it manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run summarizer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SECONDARY_EMAIL: ${{ secrets.SECONDARY_EMAIL }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          MAIN_EMAIL: ${{ secrets.MAIN_EMAIL }}
+        run: python summarizer.py
