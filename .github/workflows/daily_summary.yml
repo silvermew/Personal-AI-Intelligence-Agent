@@ -1,11 +1,9 @@
-name: Daily Robotics Summary
+name: Daily Robotics Summary (Showcase Only)
 
 on:
-  schedule:
-    # This runs at 08:00 UTC every day. 
-    # You can change this to your preferred time.
-    - cron: '0 8 * * *'
-  workflow_dispatch: # This allows you to run it manually for testing
+  # We removed 'schedule' to prevent duplicate emails.
+  # This stays here so people can see you know how to use Manual Triggers.
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -13,7 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
